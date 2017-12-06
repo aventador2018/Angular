@@ -11,7 +11,7 @@
 
      <div fxFlex>
       <md-grid-list cols="2" rowHeight="200px">
-        <md-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
+        <md-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
           <img height="200px" src={{dish.image}} alt={{dish.name}}>
           <md-grid-tile-footer>
           <h1 md-line>{{dish.name | uppercase }}</h1>
@@ -20,9 +20,8 @@
       </md-grid-list>
      </div>
 
-     <div fxFlex *ngIf="selectedDish">
-       <app-dishdetail [dish]="selectedDish"></app-dishdetail>
-       <!--<md-card>
+     <!--<div fxFlex *ngIf="selectedDish">
+       <md-card>
          <md-card-header>
            <md-card-title>
              <h3>{{ selectedDish.name | uppercase}}</h3>
@@ -36,6 +35,6 @@
            <button md-button>LIKE</button>
            <button md-button>SHARE</button>
          </md-card-actions>
-       </md-card>-->
-     </div>
+       </md-card>
+     </div>-->
 </div>
